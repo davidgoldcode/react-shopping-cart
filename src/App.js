@@ -15,7 +15,11 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
-		setCart([...cart, item]);
+		let duplicate = Object.assign(item);
+		duplicate.id = Math.random(10000);
+		console.log(duplicate);
+		setCart([...cart, duplicate]);
+		console.log(cart);
 	};
 
 	const removeItem = event => {
